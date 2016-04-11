@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">"MovieMapps "</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="comparte">Comparte con tus amigos</string>
+    <string name="acercade">Acerca de </string>
+
+    <string name="comunicate">Comunicate</string>
+    <string name="mapa">Cinemas cercanos</string>
+    <string name="cartelera">Cartelera</string>
+    <string name="calificacion">Calificaciones</string>
+    <string name="armaPlan">Arma tu plan</string>
+
+
+</resources>
