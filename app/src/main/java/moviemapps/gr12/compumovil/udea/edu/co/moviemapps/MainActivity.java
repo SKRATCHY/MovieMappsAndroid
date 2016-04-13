@@ -1,5 +1,6 @@
 package moviemapps.gr12.compumovil.udea.edu.co.moviemapps;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -122,5 +123,9 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.content_main, f, f.getClass().getName()).addToBackStack(f.getClass().getName());
         ft.commit();
+    }
+
+    public Context getContext(){
+        return (Context) getApplicationContext();
     }
 }

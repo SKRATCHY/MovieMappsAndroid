@@ -5,7 +5,6 @@ package moviemapps.gr12.compumovil.udea.edu.co.moviemapps;
  */
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +13,17 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import moviemapps.gr12.compumovil.udea.edu.co.moviemapps.model.Pelicula;
+import moviemapps.gr12.compumovil.udea.edu.co.moviemapps.model.Movie;
 
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private ArrayList<Pelicula> peliculas;
+    private ArrayList<Movie> movies;
     //private OnItemCarreraListener listener;
 
 
-    //public MyAdapter(ArrayList<Pelicula> myDataset, OnItemCarreraListener listener) {
-    public MyAdapter(ArrayList<Pelicula> myDataset) {
-        peliculas = myDataset;
+    //public MyAdapter(ArrayList<Movie> myDataset, OnItemCarreraListener listener) {
+    public MyAdapter(ArrayList<Movie> myDataset) {
+        movies = myDataset;
         //this.listener = listener;
     }
 
@@ -41,12 +40,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        if(peliculas.get(position) != null) {
-            holder.tvNombre.setText(peliculas.get(position).getNombre());
-            holder.tvDuracion.setText(String.valueOf(peliculas.get(position).getDuracion()));
-            holder.tvGenero.setText(peliculas.get(position).getGenero());
-            Log.e("imagen", peliculas.get(position).getPoster());
-            holder.ivPoster.setImageURI(Uri.parse(peliculas.get(position).getPoster()));
+        if(movies.get(position) != null) {
+            holder.tvNombre.setText(movies.get(position).getTitle());
+            holder.tvDuracion.setText(String.valueOf(movies.get(position).getReleaseDate()));
+            holder.tvGenero.setText(String.valueOf(movies.get(position).getId()));
+            if (movies.get(position).getPosterPath() != null) {
+                holder.ivPoster.setImageURI(Uri.parse(movies.get(position).getPosterPath()));
+            }
+
         }
         /*holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +61,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return peliculas.size();
+        return movies.size();
     }
 
     /* public String getItem(int position) {
